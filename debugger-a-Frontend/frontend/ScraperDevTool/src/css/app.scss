@@ -1,0 +1,50 @@
+// app global css in SCSS form
+.h-100 {
+  height: 100%;
+}
+.w-100{
+  width: 100%;
+}
+.bg-white {
+  color: $primary;
+}
+.fixed-fab {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+.positive-text{
+    color: $positive;
+}
+.negative-text{
+    color: $negative;
+}
+.d-flex{
+    display: flex;
+}
+.flex-dir-col{
+    flex-direction: column;
+}
+
+// Node style
+g.node{
+  cursor: pointer;
+}
+g.node.before-bp text{
+  fill: #fff;
+}
+g.node.after-bp text{
+  fill: #fff;
+}
+g.node.before-bp polygon{
+  fill: #3183bd70;
+  stroke: #3182bd;
+}
+g.node.after-bp polygon{
+  fill: #F2C03770;
+  stroke: #F2C037;
+}
+g.node.before-bp.after-bp polygon{
+  fill: #614bb870;
+  stroke: #614bb8;
+}

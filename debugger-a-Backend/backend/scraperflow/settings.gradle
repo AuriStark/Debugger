@@ -1,0 +1,8 @@
+rootProject.name = 'ScraperFlow'
+
+include 'api'
+include 'utilities'
+include 'core'
+include 'core-parsers'
+include 'core-plugins'
+include 'test-framework'

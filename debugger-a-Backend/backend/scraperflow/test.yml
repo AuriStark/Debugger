@@ -1,0 +1,19 @@
+# Scale visuals (sensible grouping, placement)
+# Debugger should handle at least 10000 flows
+start:
+    - { f: Log, log: "starting forked workflow" }
+    - { f: Fork, forkTargets: [a,b] }
+
+a:
+    - { f: Log, log: "this is branch a, doing 3000 requests" }
+    - { f: IntRange, from: 1, to: 3000, output: i, streamTarget: as }
+
+as:
+    - { f: Log, log: "{i}" }
+
+b:
+    - { f: Log, log: "this is branch a, doing 7000 requests" }
+    - { f: IntRange, from: 1, to: 7000, output: i, streamTarget: bs }
+
+bs:
+    - { f: Log, log: "{i}" }

@@ -1,0 +1,44 @@
+image: adoptopenjdk/openjdk13:x86_64-ubi-minimal-jdk-13.0.2_8
+
+stages:
+  - build
+  - test
+  - coverage
+  - install
+  - run
+
+before_script:
+  - java -version
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+
+build:
+  stage: build
+  script:
+    - ./gradlew assemble
+
+test:
+  stage: test
+  script:
+    - ./gradlew check -i
+
+coverage:
+  stage: coverage
+  script:
+    - ./gradlew codeCoverageReport
+    - awk -F"," '{ instructions += $4 + $5; covered += $5 } END { print covered, "/",instructions, "instructions covered"; print 100*covered/instructions, "%covered" }' build/reports/jacoco/codeCoverageReport/codeCoverageReport.csv
+
+install:
+  stage: install
+  script:
+    - ./gradlew build
+
+run:
+  stage: run
+  script:
+    - ./gradlew run
+

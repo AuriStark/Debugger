@@ -1,0 +1,40 @@
+### gradle
+**/.gradle
+!gradle/wrapper/gradle-wrapper.jar
+
+/**/bin/
+/**/build/
+/**/builds/
+/**/classes/
+
+### intellij
+.idea
+*.iml
+/**/out/
+
+### vim
+**/*.swp
+
+## ignore antlr jar whereever it is
+**/antlr.jar
+
+### junit error logs and normal logs
+**/errors.log
+**/*.log
+
+### generated editor html file
+**/resources/**/scraper-editor.html
+### generated class model file
+**/*class-model.json
+**/class-model.js
+
+
+/**/rt
+/**/rt_
+/**/*nodes*link*
+/**/*plugins*link*
+
+/**/scraper-nodes-dev
+**/.project
+**/.settings
+**/.classpath

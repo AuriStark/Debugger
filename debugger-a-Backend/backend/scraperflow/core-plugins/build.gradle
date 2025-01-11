@@ -1,0 +1,12 @@
+apply plugin: 'java-library'
+
+dependencies {
+    api project(':core')
+    testCompileOnly project(':test-framework')
+    testRuntimeOnly project(':test-framework')
+
+    // websocket
+    implementation 'org.java-websocket:Java-WebSocket:1.5.2'
+}
+
+apply from: '../gradle/gradle-module-fix.gradle'
